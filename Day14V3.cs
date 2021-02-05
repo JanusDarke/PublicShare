@@ -48,29 +48,7 @@ namespace Advent_of_Code_2020
             }
             else
             {
-                double result = 0;
-                foreach (var KeyValuePair in memory)
-                {
-                    result += KeyValuePair.Value;
-                }
-                if (Part1Finished)
-                {
-                    Console.WriteLine($"Finished part 2, result is: {result}");
-                    Console.WriteLine($"Result should be          : 3705162613854");
-                }
-                else
-                {
-                    Console.WriteLine($"Finished part 1, result is: {result}");
-                    Console.WriteLine($"Result should be          : 7611244640053");
-                }
-
-                if (!Part1Finished)
-                {
-                    Part1Finished = true;
-                    currentMask = new char[36];
-                    memory.Clear();
-                    ExecuteNextCommand(commandList, -1);
-                }
+                CalculateResult(commandList);
             }
         }
 
@@ -148,6 +126,33 @@ namespace Advent_of_Code_2020
                 }
             }
             return true;
-        } 
+        }
+
+        private static void CalculateResult(List<string> commandList)
+        {
+            double result = 0;
+            foreach (var KeyValuePair in memory)
+            {
+                result += KeyValuePair.Value;
+            }
+            if (Part1Finished)
+            {
+                Console.WriteLine($"Finished part 2, result is: {result}");
+                Console.WriteLine($"Result should be          : 3705162613854");
+            }
+            else
+            {
+                Console.WriteLine($"Finished part 1, result is: {result}");
+                Console.WriteLine($"Result should be          : 7611244640053");
+            }
+
+            if (!Part1Finished)
+            {
+                Part1Finished = true;
+                currentMask = new char[36];
+                memory.Clear();
+                ExecuteNextCommand(commandList, -1);
+            }
+        }
     }
 }
