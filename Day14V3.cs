@@ -96,8 +96,7 @@ namespace Advent_of_Code_2020
                     else
                     {
                         aCurrentMemoryValue[i] = '1';
-                    }
-                    
+                    }                    
                 }
                 else if (!Part1Finished && currentMask[i] == '0') 
                 {
@@ -106,7 +105,6 @@ namespace Advent_of_Code_2020
             }
             floatingValues.Reverse();
             return FindMemoryChanges(floatingValues, aCurrentMemoryAddress, aCurrentMemoryValue);
-
         }
 
         private static bool FindMemoryChanges(List<int> aFloatingValues, char[] aCurrentMemoryAddress, char[] aCurrentMemoryValue)
