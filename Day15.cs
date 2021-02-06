@@ -47,7 +47,7 @@ namespace Advent_of_Code_2020
             else
             {
                 memory.Add(aLastValues.Item1,aLastValues.Item2);
-                Tuple<int, int> nextEntry = new Tuple<int, int>(0,aCurrentTurn);
+                Tuple<int, int> nextEntry = new Tuple<int, int>(0, aCurrentTurn);
                 return nextEntry;
             }
         }
