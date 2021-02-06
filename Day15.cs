@@ -35,19 +35,19 @@ namespace Advent_of_Code_2020
             Tuple<int, int> lastValues = new Tuple<int, int>(lastNumber, lastTurn);
             return lastValues;            
         }
-        private static Tuple<int, int> IsCurrentValueInMemory(Tuple<int,int> aLastValues, int currentTurn) 
+        private static Tuple<int, int> IsCurrentValueInMemory(Tuple<int,int> aLastValues, int aCurrentTurn) 
         {
             if (memory.ContainsKey(aLastValues.Item1))
             {
                 int newVal = aLastValues.Item2 - memory[aLastValues.Item1];
-                Tuple<int, int> nextEntry = new Tuple<int, int>(newVal, currentTurn);
+                Tuple<int, int> nextEntry = new Tuple<int, int>(newVal, aCurrentTurn);
                 memory[aLastValues.Item1] = aLastValues.Item2;
                 return nextEntry;
             }
             else
             {
                 memory.Add(aLastValues.Item1,aLastValues.Item2);
-                Tuple<int, int> nextEntry = new Tuple<int, int>(0,currentTurn);
+                Tuple<int, int> nextEntry = new Tuple<int, int>(0,aCurrentTurn);
                 return nextEntry;
             }
         }
