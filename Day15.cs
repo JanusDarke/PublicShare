@@ -16,8 +16,7 @@ namespace Advent_of_Code_2020
             {
                 if (lastValues.Item2 == 2020)
                 {
-                    Console.WriteLine($"Part1: {lastValues.Item1}");
-  
+                    Console.WriteLine($"Part1: {lastValues.Item1}");  
                 }
                 int currentTurn = lastValues.Item2 + 1;
                 lastValues = IsCurrentValueInMemory(lastValues, currentTurn);
